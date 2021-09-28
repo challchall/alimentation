@@ -69,10 +69,9 @@ export const Question = () => {
         if (dogWeight < 10) {
             tempBe = (Math.round(130 * Math.pow(dogWeight, 0.75)))
         } else {
-            tempBe = (Math.round(130 * Math.pow(dogWeight, 0.67)))
+            tempBe = (Math.round(156 * Math.pow(dogWeight, 0.67)))
         }
         if (sterilizedDog) {
-            console.log(tempBe)
             tempBe = (Math.round(tempBe * 0.8))
         }
         if (isLab) {
