@@ -17,7 +17,7 @@ export const Question = () => {
     let [interiorCat, setInteriorCat] = useState(0);
     let [dogHourWalk, setDogHourWalk] = useState(0);
     let [isLab, setIsLab] = useState(0);
-
+    let tempBe = 0;
     const selectDogWeight = (event) => {
         setDogWeight(event.target.value);
     }
@@ -67,10 +67,21 @@ export const Question = () => {
             }
         }
         if (dogWeight < 10) {
-            setDogBe(Math.round(130 * Math.pow(dogWeight, 0.75)))
+            tempBe = (Math.round(130 * Math.pow(dogWeight, 0.75)))
         } else {
-            setDogBe(Math.round(130 * Math.pow(dogWeight, 0.67)))
+            tempBe = (Math.round(130 * Math.pow(dogWeight, 0.67)))
         }
+        if (sterilizedDog) {
+            console.log(tempBe)
+            tempBe = (Math.round(tempBe * 0.8))
+        }
+        if (isLab) {
+            tempBe = (Math.round(tempBe * 0.8))
+        }
+        if (dogHourWalk) {
+            tempBe = (Math.round(tempBe * 0.8))
+        }
+        setDogBe(tempBe)
     }
 
     const handleCatRpc = () => {
